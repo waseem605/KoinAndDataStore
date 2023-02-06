@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var tvName: TextView
     lateinit var tvAge: TextView
     lateinit var saveButton: Button
+    lateinit var mPreferenceManagerClass : PreferenceManagerClass
 
     lateinit var userManager: UserManager
     var age = 0
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+mPreferenceManagerClass = PreferenceManagerClass(this)
         etName = findViewById(R.id.et_name)
         etAge = findViewById(R.id.et_age)
         tvName = findViewById(R.id.tv_name)
@@ -50,7 +51,13 @@ class MainActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             name = etName.text.toString()
             age = etAge.text.toString().toInt()
+            val list = java.util.ArrayList<String>()
+            list.add("ali" )
+            list.add("ali 0" )
+            list.add("ali 1" )
 
+            //
+            mPreferenceManagerClass.putStringArrayList("Array",list)
             // Stores the values
             // Since the storeUser function of UserManager
             // class is a suspend function

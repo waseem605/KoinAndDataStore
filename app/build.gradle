@@ -52,21 +52,21 @@ dependencies {
 
     // Lifecycle components
 
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 
     implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 
     // Kotlin coroutines components
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.10"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20"
 
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
 
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
 
 

@@ -1,8 +1,10 @@
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
         mavenCentral()
+//        classpath "org.koin:koin-gradle-plugin:3.1.0"
     }
 }
 dependencyResolutionManagement {

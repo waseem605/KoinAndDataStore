@@ -1,14 +1,22 @@
 package com.example.koinanddatastore
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.lifecycle.asLiveData
+import com.example.koinanddatastore.retrofitWithKoin.Component
+import com.example.koinanddatastore.retrofitWithKoin.MainViewModel
+import com.example.koinanddatastore.retrofitWithKoin.PostActivity
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.koin.core.qualifier.named
+import org.koin.android.ext.android.inject
 
+//@KoinApiExtension
 class MainActivity : AppCompatActivity() {
 
     lateinit var etName: EditText
@@ -17,14 +25,30 @@ class MainActivity : AppCompatActivity() {
     lateinit var tvAge: TextView
     lateinit var saveButton: Button
     lateinit var mPreferenceManagerClass : PreferenceManagerClass
-
     lateinit var userManager: UserManager
     var age = 0
     var name = ""
+    val mainViewModel :MainViewModel by viewModels()
+
+
+    val mComponent = Component()
+
+    private val hello by inject<String>(named("bye"))
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        startActivity(Intent(this,PostActivity::class.java))
+
+//        mComponent.car.getCar()
+//        mComponent.main.getMain()
+
+//        val viewModel = getViewModel<MainViewModel>()
+//        mainViewModel.doNetworkCall()
+
+
 mPreferenceManagerClass = PreferenceManagerClass(this)
         etName = findViewById(R.id.et_name)
         etAge = findViewById(R.id.et_age)
